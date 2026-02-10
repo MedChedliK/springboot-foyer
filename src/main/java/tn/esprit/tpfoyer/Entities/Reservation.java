@@ -7,8 +7,8 @@ import java.util.Set;
 @Entity
 public class Reservation {
     @Id
-    private String idReservation;
-
+    private long  idReservation;
+    @Temporal(TemporalType.DATE)
     private Date anneeUniversitaire;
 
     private boolean estValide;
@@ -17,7 +17,7 @@ public class Reservation {
     @JoinColumn(name = "chambre_id")
     private Chambre chambre;
 
-    @ManyToMany(mappedBy = "reservations", cascade = CascadeType.ALL)
+    @ManyToMany( cascade = CascadeType.ALL)
     private Set<Etudiant> etudiants;
 
 }

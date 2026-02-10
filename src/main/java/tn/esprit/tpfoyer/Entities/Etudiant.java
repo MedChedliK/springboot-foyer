@@ -16,10 +16,10 @@ public class Etudiant {
     private Long cin;
     private String ecole;
 
-
+    @Temporal(TemporalType.DATE)
     private Date dateNaissance;
 
-    @ManyToMany(cascade = CascadeType.ALL)
+    @ManyToMany(mappedBy = "Etudiant")
 
     private Set<Reservation> reservations;
 }
